@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CraftDraw</title>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <img src="images/cd.jpeg" alt="Logo CraftDraw">
+      <h2>CraftDraw</h2>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="craftdrawproductos.html">Todos Los Productos</a>
+    <a href="sobrenosotros.html">Sobre Nosotros</a>
+    <a href="https://www.tiktok.com/@craft.draw7">TikTok</a>
+    <a href="https://www.instagram.com/nicox_.0/">Instagram</a>
+    <a href="file:///C:/xampp/htdocs/Trabajos/PaginaCD/carrito.html">Carrito</a>
+  </nav>
+
+  <div class="container">
+    <div class="caja">
+      <div class="text2">
+        <p>¡Bienvenido a <b>CraftDraw</b>, donde podrás encontrar las mejores herramientas para fines artísticos y creativos! Contamos con una extensa selección de materiales artísticos, incluyendo herramientas para dibujo, pintura acrílica, pinceles, brochas, ¡y mucho más! Explora esta tienda y empieza a dibujar como siempre soñaste.</p>
+        <p><b>Objetivo</b></p>
+        <p>Captar la atención de personas interesadas en el arte.</p>
+      </div>
+    </div>
+
+    <marquee bgcolor="#890481"><font color="#FFFFFF" size="5" face="a Arbei Berry">¡Obtén un 20% de descuento en todos los artículos!</font></marquee>
+
+    <h2 style="text-align: center;">Lo Más Vendido</h2>
+
+    <div class="catalogo">
+      <div class="catalogo-item">
+        <img src="images/fabriano.jpeg" alt="Cuaderno Fabriano">
+        <h3>Cuaderno Fabriano 22.9x30.5cm</h3>
+         <p class="price"><b>$216</b> </p>
+         <p class="price"><s>$270</s></p>
+        <button onclick="agregarAlCarrito('Cuaderno Fabriano 22.9x30.5cm', 216)">Agregar al carrito</button>
+      </div>
+      <div class="catalogo-item">
+        <img src="images/block.jpeg" alt="Block de Dibujo Pinto">
+        <h3>Block de Dibujo Pinto 32x49cm</h3>
+         <p class="price"><b>$156</b></p>
+         <p class="price"><s>$195</s></p>
+        <button onclick="agregarAlCarrito('Block de Dibujo Pinto 32x49cm', 156)">Agregar al carrito</button>
+      </div>
+      <div class="catalogo-item">
+        <img src="images/set.jpeg" alt="Kit de Dibujo">
+        <h3>Kit de Dibujo Profesional</h3>
+         <p class="price"><b>$320</b></p>
+         <p class="price"><s>$400</s></p>
+        <button onclick="agregarAlCarrito('Kit de Dibujo Profesional', 320)">Agregar al carrito</button>
+      </div>
+      <div class="catalogo-item">
+        <img src="images/crayones.jpeg" alt="Crayones">
+        <h3>Crayones de Oleo-Pastel</h3>
+         <p class="price"><b>$96</b></p>
+         <p class="price"><s>$120</s></p>
+        <button onclick="agregarAlCarrito('Crayones de Oleo-Pastel', 96)">Agregar al carrito</button>
+      </div>
+    </div>
+
+    <h2 style="text-align: center;">Catálogo</h2>
+    <div class="catalogo">
+      <a href="craftdrawdibujo.html" class="catalogo-button">
+        <img src="images/dibujo.jpeg" alt="Dibujo">
+        <h1>Dibujo</h1>
+      </a>
+      <a href="craftdrawpintura.html" class="catalogo-button">
+        <img src="images/pintura.jpeg" alt="Pintura">
+        <h1>Pintura</h1>
+      </a>
+    </div>
+  </div>
+
+   <script>
+    window.onload = function() {
+        localStorage.removeItem('carrito');
+    };
+
+    function agregarAlCarrito(nombre, precio) {
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        carrito.push({ nombre, precio });
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        alert(`${nombre} ha sido agregado al carrito.`);
+    }
+</script>
+
+</body>
+</html>
+</html>
